@@ -145,12 +145,6 @@ SELECT * FROM RISK_TOLERANCE;
 -- FINANCIAL_GOAL
 -- ==========================================
 INSERT INTO FINANCIAL_GOAL VALUES
-('Retirement', '91234567', 1000000.00, 30),
-('Children Education', '90001111', 300000.00, 10),
-('Buy Property', '98765432', 800000.00, 15),
-('Holiday Fund', '95554444', 50000.00, 3),
-('Medical Emergency', '93332222', 200000.00, 2),
-('Start Business', '96669999', 450000.00, 5),
 ('Buy Property', '92000000', 800000, 25),
 ('Start Business', '92000001', 1000000, 30),
 ('Medical Emergency', '92000002', 200000, 30),
