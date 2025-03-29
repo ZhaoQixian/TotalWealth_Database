@@ -1,12 +1,42 @@
+-- Switch to the correct database
+USE TotalWealthDB;
+GO
+
+
+-- PART 1: CLEAN ALL DATA FROM TABLES
+-- Disable all constraints first
+EXEC sp_MSforeachtable "ALTER TABLE ? NOCHECK CONSTRAINT ALL";
+
+-- Delete all data from tables in reverse order of dependencies
+DELETE FROM TransactionFees;
+DELETE FROM Transaction1;
+DELETE FROM UNREALIZED_GAIN_LOSS;
+DELETE FROM INVESTED_VALUE;
+DELETE FROM FUND_IN_PORTFOLIO;
+DELETE FROM BOND_IN_PORTFOLIO;
+DELETE FROM STOCK_IN_PORTFOLIO;
+DELETE FROM PortfolioFeeStructure;
+DELETE FROM Portfolio1;
+DELETE FROM FUND;
+DELETE FROM BOND;
+DELETE FROM STOCK;
+DELETE FROM ASSET;
+DELETE FROM FINANCIAL_GOAL;
+DELETE FROM RISK_TOLERANCE;
+DELETE FROM INVESTOR;
+
+-- Re-enable all constraints
+EXEC sp_MSforeachtable "ALTER TABLE ? CHECK CONSTRAINT ALL";
+
 -- PART 2: INSERT DATA RESPECTING SINGLE PRIMARY KEY CONSTRAINTS
 -- ==========================================
 -- INVESTOR
 -- ==========================================
 INSERT INTO INVESTOR VALUES 
-('91234567', 'Alice Tan', 'F', '1995-08-15', 85000.00, 'DBS'),
-('98765432', 'Bob Lee', 'M', '1987-03-22', 120000.00, 'OCBC'),
-('90001111', 'Clara Tan', 'F', '1980-11-02', 125000.00, 'UOB'),
-('95554444', 'Daniel Lim', 'M', '1990-06-17', 60000.00, 'Grab'),
+('91234567', 'Guo Yichen', 'F', '1995-08-15', 85000.00, 'DBS'),
+('98765432', 'Mahi Pandey', 'M', '1987-03-22', 120000.00, 'OCBC'),
+('90001111', 'Mehta Rishika', 'F', '1980-11-02', 125000.00, 'UOB'),
+('95554444', 'Zhao Qixian', 'M', '1990-06-17', 60000.00, 'Grab'),
 ('93332222', 'Evelyn Ong', 'F', '1962-02-23', 95000.00, 'GovTech'),
 ('96669999', 'Faisal Rahman', 'M', '2000-05-18', 110000.00, 'Shopee');
 

@@ -2,33 +2,6 @@
 USE TotalWealthDB;
 GO
 
--- PART 1: CLEAN ALL DATA FROM TABLES
--- Disable all constraints first
-EXEC sp_MSforeachtable "ALTER TABLE ? NOCHECK CONSTRAINT ALL";
-
--- Delete all data from tables in reverse order of dependencies
-DELETE FROM TransactionFees;
-DELETE FROM Transaction1;
-DELETE FROM UNREALIZED_GAIN_LOSS;
-DELETE FROM INVESTED_VALUE;
-DELETE FROM FUND_IN_PORTFOLIO;
-DELETE FROM BOND_IN_PORTFOLIO;
-DELETE FROM STOCK_IN_PORTFOLIO;
-DELETE FROM PortfolioFeeStructure;
-DELETE FROM Portfolio1;
-DELETE FROM FUND;
-DELETE FROM BOND;
-DELETE FROM STOCK;
-DELETE FROM ASSET;
-DELETE FROM FINANCIAL_GOAL;
-DELETE FROM RISK_TOLERANCE;
-DELETE FROM INVESTOR;
-
--- Re-enable all constraints
-EXEC sp_MSforeachtable "ALTER TABLE ? CHECK CONSTRAINT ALL";
-
-
-
 --Queries
 -- 1. Find investors who are making on average a loss across all their portfolios in 2024.
 SELECT 
