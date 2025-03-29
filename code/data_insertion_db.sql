@@ -39,6 +39,7 @@ INSERT INTO INVESTOR VALUES
 ('95554444', 'Zhao Qixian', 'M', '1990-06-17', 60000.00, 'Grab'),
 ('93332222', 'Evelyn Ong', 'F', '1962-02-23', 95000.00, 'GovTech'),
 ('96669999', 'Faisal Rahman', 'M', '2000-05-18', 110000.00, 'Shopee');
+SELECT * FROM INVESTOR;
 
 -- ==========================================
 -- RISK_TOLERANCE
@@ -50,6 +51,7 @@ INSERT INTO RISK_TOLERANCE VALUES
 ('95554444', 'Aggressive', 'D', 'B', 'A', 'B', 'C'),
 ('93332222', 'Conservative', 'C', 'C', 'B', 'D', 'A'),
 ('96669999', 'Aggressive', 'A', 'C', 'D', 'B', 'A');
+SELECT * FROM RISK_TOLERANCE;
 
 -- ==========================================
 -- FINANCIAL_GOAL
@@ -61,6 +63,7 @@ INSERT INTO FINANCIAL_GOAL VALUES
 ('Holiday Fund', '95554444', 50000.00, 3),
 ('Medical Emergency', '93332222', 200000.00, 2),
 ('Start Business', '96669999', 450000.00, 5);
+SELECT * FROM FINANCIAL_GOAL;
 
 -- ==========================================
 -- ASSET
@@ -72,6 +75,7 @@ INSERT INTO ASSET VALUES
 ('BND002', 'US Treasury 2030', 98.50),
 ('FND001', 'Vanguard S&P 500', 55.25),
 ('FND002', 'Asia Growth Fund', 45.00);
+SELECT * FROM ASSET;
 
 -- ==========================================
 -- STOCK
@@ -79,6 +83,7 @@ INSERT INTO ASSET VALUES
 INSERT INTO STOCK VALUES 
 ('STK001', 25.6, 12.5, 30000000.00),
 ('STK002', 30.0, 15.2, 50000000.00);
+SELECT * FROM STOCK;
 
 -- ==========================================
 -- BOND
@@ -86,6 +91,7 @@ INSERT INTO STOCK VALUES
 INSERT INTO BOND VALUES 
 ('BND001', 3.5, '2035-12-31'),
 ('BND002', 2.8, '2030-06-30');
+SELECT * FROM BOND;
 
 -- ==========================================
 -- FUND
@@ -93,6 +99,7 @@ INSERT INTO BOND VALUES
 INSERT INTO FUND VALUES 
 ('FND001', 1.2, 2.8),
 ('FND002', 1.5, 3.1);
+SELECT * FROM FUND;
 
 -- ==========================================
 -- Portfolio1
@@ -104,6 +111,7 @@ INSERT INTO Portfolio1 VALUES
 ('95554444', 'P1004', 300000.00, '2023-01-05', 5.20),
 ('93332222', 'P1005', 700000.00, '2020-07-01', -2.50),
 ('96669999', 'P1006', 850000.00, '2021-10-12', 12.00);
+SELECT * FROM Portfolio1;
 
 -- ==========================================
 -- PortfolioFeeStructure
@@ -115,6 +123,7 @@ INSERT INTO PortfolioFeeStructure VALUES
 (300000.00, 0.88),
 (700000.00, 0.88),
 (850000.00, 0.88);
+SELECT * FROM PortfolioFeeStructure;
 
 -- ==========================================
 -- For tables with single primary keys, we need to be careful 
@@ -127,6 +136,7 @@ INSERT INTO PortfolioFeeStructure VALUES
 INSERT INTO STOCK_IN_PORTFOLIO VALUES
 ('STK001', 'P1001', '91234567', '2021-01-01', 0.4, 'Saxo'),
 ('STK002', 'P1002', '98765432', '2022-05-10', 0.5, 'Clearstream');
+SELECT * FROM STOCK_IN_PORTFOLIO;
 
 -- ==========================================
 -- BOND_IN_PORTFOLIO (respecting single primary key)
@@ -134,6 +144,7 @@ INSERT INTO STOCK_IN_PORTFOLIO VALUES
 INSERT INTO BOND_IN_PORTFOLIO VALUES
 ('BND001', 'P1001', '91234567', '2021-01-01', 0.3, 'Clearstream'),
 ('BND002', 'P1002', '98765432', '2022-05-10', 0.2, 'Saxo');
+SELECT * FROM BOND_IN_PORTFOLIO;
 
 -- ==========================================
 -- FUND_IN_PORTFOLIO (respecting single primary key)
@@ -141,6 +152,7 @@ INSERT INTO BOND_IN_PORTFOLIO VALUES
 INSERT INTO FUND_IN_PORTFOLIO VALUES
 ('FND001', 'P1001', '91234567', '2021-01-01', 0.3, 'Interactive Broker'),
 ('FND002', 'P1002', '98765432', '2022-05-10', 0.3, 'Clearstream');
+SELECT * FROM FUND_IN_PORTFOLIO;
 
 -- ==========================================
 -- INVESTED_VALUE (2024 focus)
@@ -152,6 +164,7 @@ INSERT INTO INVESTED_VALUE VALUES
 ('95554444', 'P1004', '2024-01-01', 300000.00),
 ('93332222', 'P1005', '2024-01-01', 700000.00),
 ('96669999', 'P1006', '2024-01-01', 850000.00);
+SELECT * FROM INVESTED_VALUE;
 
 -- Add March 2024 data
 INSERT INTO INVESTED_VALUE VALUES
@@ -161,17 +174,20 @@ INSERT INTO INVESTED_VALUE VALUES
 ('95554444', 'P1004', '2024-03-31', 290000.00),
 ('93332222', 'P1005', '2024-03-31', 650000.00),
 ('96669999', 'P1006', '2024-03-31', 880000.00);
+SELECT * FROM INVESTED_VALUE;
 
 -- ==========================================
 -- UNREALIZED_GAIN_LOSS (2024 trends) with losses
 -- ==========================================
 INSERT INTO UNREALIZED_GAIN_LOSS VALUES
-('91234567', 'P1001', '2024-01-01', -25000.00), -- Loss for Alice
-('98765432', 'P1002', '2024-01-01', -30000.00), -- Loss for Bob
-('90001111', 'P1003', '2024-01-01', 10000.00),  -- Gain for Clara
-('95554444', 'P1004', '2024-01-01', -15000.00), -- Loss for Daniel
+('91234567', 'P1001', '2024-01-01', -25000.00), -- Loss for Yichen
+('98765432', 'P1002', '2024-01-01', -30000.00), -- Loss for Mahi
+('90001111', 'P1003', '2024-01-01', 10000.00),  -- Gain for Rishika
+('95554444', 'P1004', '2024-01-01', -15000.00), -- Loss for Qixian
 ('93332222', 'P1005', '2024-01-01', -40000.00), -- Loss for Evelyn
 ('96669999', 'P1006', '2024-01-01', 30000.00);  -- Gain for Faisal
+SELECT * FROM UNREALIZED_GAIN_LOSS;
+
 
 -- Add March 2024 values to establish a trend
 INSERT INTO UNREALIZED_GAIN_LOSS VALUES
@@ -181,6 +197,7 @@ INSERT INTO UNREALIZED_GAIN_LOSS VALUES
 ('95554444', 'P1004', '2024-03-31', -20000.00),
 ('93332222', 'P1005', '2024-03-31', -50000.00),
 ('96669999', 'P1006', '2024-03-31', 40000.00);
+SELECT * FROM UNREALIZED_GAIN_LOSS;
 
 -- ==========================================
 -- Transaction1
@@ -192,6 +209,7 @@ INSERT INTO Transaction1 VALUES
 ('T004', '2024-03-01', 'P1004', '95554444', 'TOPUP'),
 ('T005', '2024-04-01', 'P1005', '93332222', 'SELL'),
 ('T006', '2024-05-01', 'P1006', '96669999', 'BUY');
+SELECT * FROM Transaction1;
 
 -- ==========================================
 -- TransactionFees
@@ -201,3 +219,4 @@ INSERT INTO TransactionFees VALUES
 ('SELL', 0.7),
 ('REBALANCE', 0.4),
 ('TOPUP', 0.2);
+SELECT * FROM TransactionFees;
