@@ -667,3 +667,4 @@ INSERT INTO TransactionFees VALUES
 ('SELL', 0.7),
 ('REBALANCE', 0.4),
 ('TOPUP', 0.2);
+SELECT * FROM TransactionFees;
