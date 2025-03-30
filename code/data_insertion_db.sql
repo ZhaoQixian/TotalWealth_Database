@@ -200,19 +200,36 @@ SELECT * FROM FINANCIAL_GOAL;
 -- ==========================================
 -- ASSET
 -- ==========================================
-INSERT INTO ASSET VALUES 
-('STK001', 'Tesla', 900.00),
-('STK002', 'Apple', 180.00),
-('BND001', 'SG Bond 2035', 100.00),
-('BND002', 'US Treasury 2030', 98.50),
+INSERT INTO ASSET VALUES
+('STK001', 'Tesla', 900.0),
+('STK002', 'Tesla', 900.0),
+('STK003', 'Tesla', 900.0),
+('STK004', 'Tesla', 900.0),
+('STK005', 'Apple', 180.0),
+('STK006', 'Apple', 180.0),
+('STK007', 'Apple', 180.0),
+('STK008', 'Nvidia', 700.0),
+('STK009', 'Nvidia', 700.0),
+('STK010', 'Microsoft', 350.0),
+('STK011', 'Microsoft', 350.0),
+('STK012', 'Amazon', 320.0),
+('STK013', 'Amazon', 320.0),
+('BND001', 'SG Bond 2035', 100.0),
+('BND002', 'SG Bond 2035', 100.0),
+('BND003', 'US Treasury 2030', 98.5),
+('BND004', 'US Treasury 2030', 98.5),
+('BND005', 'Green Bond 2040', 102.0),
+('BND006', 'Green Bond 2040', 102.0),
+('BND007', 'Singapore Savings Bond 2028', 100.0),
+('BND008', 'Singapore Savings Bond 2028', 100.0),
 ('FND001', 'Vanguard S&P 500', 55.25),
-('FND002', 'Asia Growth Fund', 45.00),
-('STK003', 'Nvidia', 700.00),
-('STK004', 'Microsoft', 350.00),
-('BND003', 'Green Bond 2040', 102.00),
-('BND004', 'Singapore Savings Bond 2028', 100.00),
-('FND003', 'Global Tech Fund', 65.75),
-('FND004', 'Emerging Markets ETF', 50.00);
+('FND002', 'Vanguard S&P 500', 55.25),
+('FND003', 'Asia Growth Fund', 45.0),
+('FND004', 'Asia Growth Fund', 45.0),
+('FND005', 'Global Tech Fund', 65.75),
+('FND006', 'Global Tech Fund', 65.75),
+('FND007', 'Emerging Markets ETF', 50.0),
+('FND008', 'Emerging Markets ETF', 50.0);
 SELECT * FROM ASSET;
 
 -- ==========================================
